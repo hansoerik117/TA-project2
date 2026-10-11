@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+	<meta charset="utf-8">
+	<title>Hans Oskar Erikson, veebiprogrammeerimine</title>
+</head>
+<body>
+	<h1>Lisa filmiga seotud amet</h1>
+	<ul>
+		<li><a href="/">Avalehele</a></li>
+		<li><a href="/eestifilm">Eesti film</a></li>
+	</ul>
+	<hr>
+	<form method="POST">
+		<label for="titleInput">Ameti nimetus:</label>
+		<input type="text" id="titleInput" name="titleInput" maxlength="50">
+		<br>
+		<label for="descriptionInput">Kirjeldus (pole kohustuslik):</label>
+		<br>
+		<textarea id="descriptionInput" name="descriptionInput" rows="5" cols="50" maxlength="1000"></textarea>
+		<br>
+		<input type="submit" value="Salvesta">
+	</form>
+	<p><%= notice %></p>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+	<meta charset="utf-8">
+	<title>Hans Oskar Erikson, veebiprogrammeerimine</title>
+</head>
+<body>
+	<h1>Eesti filmiga seotud inimesed</h1>
+	<ul>
+		<li><a href="/">Avalehele</a></li>
+		<li><a href="/eestifilm">Eesti film</a></li>
+	</ul>
+	<hr>
+	<% if(personList.length == 0) { %>
+		<p>Ühtegi inimest ei leitud!</p>
+	<% } else { %>
+		<ul>
+		<% personList.forEach(function(person) { %>
+			<li><%= person.first_name %> <%= person.last_name %>, sündinud <%= new Date(person.born).toLocaleDateString('et-EE') %></li>
+		<% }); %>
+		</ul>
+	<% } %>
+</body>
+</html>

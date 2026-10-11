@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+	<meta charset="utf-8">
+	<title>Hans Oskar Erikson, veebiprogrammeerimine</title>
+</head>
+<body>
+	<h1>Lisa Eesti filmiga seotud inimene</h1>
+	<ul>
+		<li><a href="/">Avalehele</a></li>
+		<li><a href="/eestifilm">Eesti film</a></li>
+	</ul>
+	<hr>
+	<form method="POST">
+		<label for="firstNameInput">Eesnimi:</label>
+		<input type="text" id="firstNameInput" name="firstNameInput">
+		<br>
+		<label for="lastNameInput">Perekonnanimi:</label>
+		<input type="text" id="lastNameInput" name="lastNameInput">
+		<br>
+		<label for="bornInput">Sünnikuupäev:</label>
+		<input type="date" id="bornInput" name="bornInput">
+		<br>
+		<label for="deceasedInput">Surmakuupäev (kui on):</label>
+		<input type="date" id="deceasedInput" name="deceasedInput">
+		<br>
+		<input type="submit" value="Salvesta">
+	</form>
+	<p><%= notice %></p>
+</body>
+</html>
