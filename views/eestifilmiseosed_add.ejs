@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+	<meta charset="utf-8">
+	<title>Hans Oskar Erikson, veebiprogrammeerimine</title>
+</head>
+<body>
+	<h1>Seosta inimene filmiga</h1>
+	<ul>
+		<li><a href="/">Avalehele</a></li>
+		<li><a href="/eestifilm">Eesti film</a></li>
+	</ul>
+	<hr>
+	<form method="POST">
+		<label for="personInput">Isik:</label>
+		<select id="personInput" name="personInput">
+			<option value="" selected disabled>Vali isik ...</option>
+			<% personList.forEach(function(person) { %>
+				<option value="<%= person.id %>"><%= person.last_name %>, <%= person.first_name %> (<%= new Date(person.born).getFullYear() %>)</option>
+			<% }); %>
+		</select>
+		<br>
+		<label for="movieInput">Film:</label>
+		<select id="movieInput" name="movieInput">
+			<option value="" selected disabled>Vali film ...</option>
+			<% movieList.forEach(function(movie) { %>
+				<option value="<%= movie.id %>"><%= movie.title %> (<%= movie.release_year %>)</option>
+			<% }); %>
+		</select>
+		<br>
+		<label for="professionInput">Amet:</label>
+		<select id="professionInput" name="professionInput">
+			<option value="" selected disabled>Vali amet ...</option>
+			<% professionList.forEach(function(profession) { %>
+				<option value="<%= profession.id %>"><%= profession.title %></option>
+			<% }); %>
+		</select>
+		<br>
+		<label for="characterInput">Tegelase nimi (kui on näitleja):</label>
+		<input type="text" id="characterInput" name="characterInput" maxlength="100">
+		<br>
+		<input type="submit" value="Salvesta seos">
+	</form>
+	<p><%= notice %></p>
+</body>
+</html>
