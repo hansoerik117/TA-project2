@@ -5,16 +5,24 @@
 	<title>Hans Oskar Erikson, veebiprogrammeerimine</title>
 </head>
 <body>
-	<img src="pic/<%= picName %>" alt="Avalehe pilt" width="600">
 	<h1>Hans Oskar Erikson, veebiprogrammeerimine</h1>
 	<p>See leht on loodud veebiprogrammeerimise kursusel Tallinna Ülikoolis.</p>
 	<hr>
 	<p>Täna on <%= dayNow %> <%= dateNow %>, kell oli lehe avamise hetkel: <%= timeNow %>.</p>
+	<h2>Uusim avalik foto</h2>
+	<% if(photo) { %>
+		<img src="<%= photo.src %>" alt="<%= photo.alt %>" style="max-width: 100%;">
+	<% } else { %>
+		<p>Avalikke fotosid pole veel üles laetud.</p>
+	<% } %>
+	<hr>
 	<ul>
 		<li><a href="/tlu">Natuke Tallinna Ülikoolist</a></li>
 		<li><a href="/vanasona">Tänane vanasõna</a></li>
 		<li><a href="/visits">Külastused</a></li>
 		<li><a href="/eestifilm">Eesti film</a></li>
+		<li><a href="/galleryPhotoUpload">Fotode üleslaadimine</a></li>
+		<li><a href="/gallery">Fotogalerii</a></li>
 	</ul>
 </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+	<meta charset="utf-8">
+	<title>Hans Oskar Erikson, veebiprogrammeerimine</title>
+</head>
+<body>
+	<h1>Fotogalerii</h1>
+	<p>Siin on kõik fotod, mis on avalikud või sisseloginud kasutajatele nähtavad.</p>
+	<ul>
+		<li><a href="/">Avalehele</a></li>
+		<li><a href="/galleryPhotoUpload">Lae fotosid üles</a></li>
+	</ul>
+	<hr>
+	<% if(photoList.length == 0) { %>
+		<p>Galeriis pole veel ühtegi fotot!</p>
+	<% } else { %>
+		<p>Fotosid kokku: <%= photoList.length %></p>
+		<div>
+		<% photoList.forEach(function(photo) { %>
+			<a href="<%= normalPath + photo.filename %>"><img src="<%= thumbPath + photo.filename %>" alt="<%= photo.alttext ? photo.alttext : 'Galeriifoto' %>" width="100" height="100"></a>
+		<% }); %>
+		</div>
+	<% } %>
+</body>
+</html>
