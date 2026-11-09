@@ -81,4 +81,7 @@ app.use('/galleryPhotoUpload', galleryPhotoUploadRouter);
 const galleryRouter = require('./routes/galleryRoutes');
 app.use('/gallery', galleryRouter);
 
+const signupRouter = require('./routes/signupRoutes');
+app.use('/signup', signupRouter);
+
 app.listen(5109);

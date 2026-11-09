@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+	<meta charset="utf-8">
+	<title>Hans Oskar Erikson, veebiprogrammeerimine</title>
+</head>
+<body>
+	<h1>Galeriisse fotode üleslaadimine</h1>
+	<p>Siin lehel saab fotosid galeriisse lisada.</p>
+	<hr>
+	<ul>
+		<li><a href="/">Avalehele</a></li>
+		<li><a href="/gallery">Fotogalerii</a></li>
+	</ul>
+	<hr>
+	<form method="POST" enctype="multipart/form-data">
+		<label for="photoInput">Vali soovitud pildifail (.jpg)</label>
+		<input id="photoInput" name="photoInput" type="file" accept="image/*">
+		<br>
+		<label for="altInput">Foto alternatiivtekst (alt)</label>
+		<input id="altInput" name="altInput" type="text" maxlength="256" placeholder="Pildil on ...">
+		<br>
+		<input id="privacyInput1" name="privacyInput" type="radio" value="1" checked>
+		<label for="privacyInput1">Privaatne (ainult ise näen)</label>
+		<br>
+		<input id="privacyInput2" name="privacyInput" type="radio" value="2">
+		<label for="privacyInput2">Sisseloginud kasutajatele</label>
+		<br>
+		<input id="privacyInput3" name="privacyInput" type="radio" value="3">
+		<label for="privacyInput3">Avalik (kõik näevad)</label>
+		<br>
+		<input id="photoSubmit" name="photoSubmit" type="submit" value="Lae üles">
+	</form>
+	<form method="POST">
+    <label for="firstNameInput">Sisesta oma eesnimi: </label>
+    <input type="text" id="firstNameInput" name="firstNameInput" placeholder="Eesnimi ..." required>
+	<br>
+	<label for="lastNameInput">Sisesta oma perekonnanimi: </label>
+    <input type="text" id="lastNameInput" name="lastNameInput" placeholder="Perekonnanimi ..." required>
+	<br>
+	<label for="birthDateInput">Sisesta sünnikuupäev: </label>
+	<input type="date" id="birthDateInput" name="birthDateInput" required>
+	<br>
+	<input type="radio" id="genderInput1" name="genderInput" value="1" checked>
+	<label for="genderInput1">Mees</label>
+	<br>
+	<input type="radio" id="genderInput2" name="genderInput" value="2">
+	<label for="genderInput2">Naine</label>
+	<br>
+	<label for="emailInput">E-mail (kasutajatunnuseks)</label>
+	<input type="email" id="emailInput" name="emailInput" placeholder="Sinu e-mail ...." required>
+	<br>
+	<label for="passwordInput">Salasõna (min 8 märki)</label>
+	<input type="password" id="passwordInput" name="passwordInput" required>
+	<br>
+	<label for="confirmPasswordInput">Korda salasõna</label>
+	<input type="password" id="confirmPasswordInput" name="confirmPasswordInput" required>
+	<br>
+	<input type="submit" id="userSubmit" name="userSubmit" value="Loo kasutajakonto">
+  </form>
+	<p><%= notice %></p>
+</body>
+</html>
